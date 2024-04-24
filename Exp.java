@@ -70,101 +70,64 @@ class Expediente {
 }
 
 class Persona {
-    private String fNm;
-    private String sNm;
+    private String fNm, sNm;
     private boolean sexo;
     private Direccion direccion;
+    private ArrayList<String> delitosCometidos;
+    private ArrayList<String> delitosAsociados;
+    
 
     public Persona(String fNm, String sNm, boolean sexo, Direccion direccion) {
         this.fNm = fNm;
         this.sNm = sNm;
         this.sexo = sexo;
         this.direccion = direccion;
+        this.delitosCometidos = new ArrayList<>();
+        this.delitosAsociados = new ArrayList<>();
     }
 
-    // Getters and setters for Persona class
     public String getfNm() {
         return fNm;
-    }
-
-    public void setfNm(String fNm) {
-        this.fNm = fNm;
     }
 
     public String getsNm() {
         return sNm;
     }
 
-    public void setsNm(String sNm) {
-        this.sNm = sNm;
-    }
-
-    public boolean isSexo() {
+    public boolean getSex() {
         return sexo;
-    }
-
-    public void setSexo(boolean sexo) {
-        this.sexo = sexo;
     }
 
     public Direccion getDireccion() {
         return direccion;
     }
 
+    public ArrayList<String> getDelitosCometidos() {
+        return delitosCometidos;
+    }
+
+    public ArrayList<String> getDelitosAsociados() {
+        return delitosAsociados;
+    }
+
+    public void setfNm(String fNm) {
+        this.fNm = fNm;
+    }
+
+    public void setsNm(String sNm) {
+        this.sNm = sNm;
+    }
+
+    public void setSexo(boolean sexo) {
+        this.sexo = sexo;
+    }
+
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
-}
-
-class Denunciado extends Persona {
-    private ArrayList<String> delitosCometidos;
-    private ArrayList<String> delitosAsociados;
-
-    public Denunciado(String fNm, String sNm, boolean sexo, Direccion direccion) {
-        super(fNm, sNm, sexo, direccion);
-        this.delitosCometidos = new ArrayList<>();
-        this.delitosAsociados = new ArrayList<>();
-    }
-
-    // Getters and setters for Denunciado class
-    public ArrayList<String> getDelitosCometidos() {
-        return delitosCometidos;
-    }
 
     public void addDelitoCometido(String delito) {
         this.delitosCometidos.add(delito);
-    }
-
-    public ArrayList<String> getDelitosAsociados() {
-        return delitosAsociados;
-    }
-
-    public void addDelitoAsociado(String delito) {
-        this.delitosAsociados.add(delito);
-    }
-}
-
-class Ofendido extends Persona {
-    private ArrayList<String> delitosCometidos;
-    private ArrayList<String> delitosAsociados;
-
-    public Ofendido(String fNm, String sNm, boolean sexo, Direccion direccion) {
-        super(fNm, sNm, sexo, direccion);
-        this.delitosCometidos = new ArrayList<>();
-        this.delitosAsociados = new ArrayList<>();
-    }
-
-    // Get n Set for Ofendido
-    public ArrayList<String> getDelitosCometidos() {
-        return delitosCometidos;
-    }
-
-    public void addDelitoCometido(String delito) {
-        this.delitosCometidos.add(delito);
-    }
-
-    public ArrayList<String> getDelitosAsociados() {
-        return delitosAsociados;
     }
 
     public void addDelitoAsociado(String delito) {
@@ -173,59 +136,114 @@ class Ofendido extends Persona {
 }
 
 class Direccion {
-    private String departamento;
-    private String municipio;
-    private String referencia;
+    private String departamento, municipio, aldea, barrio, colonia, calle, bloque, referencia;
+    private int codPost;
 
-    public Direccion(String departamento, String municipio, String referencia) {
+    public Direccion(String departamento, String municipio, String aldea, String barrio, String colonia, String calle, String bloque, int codPost, String referencia) {
         this.departamento = departamento;
         this.municipio = municipio;
-        this.referencia = referencia;
+        this.aldea = aldea;
+        this.barrio = barrio;
+        this.colonia = colonia;
+        this.calle = calle;
+        this.bloque = bloque;
+        this.codPost = codPost;
+        this.referencia = referencia;        
     }
 
-    // Getters and setters for Direccion class
     public String getDepartamento() {
         return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
     }
 
     public String getMunicipio() {
         return municipio;
     }
 
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
+    public String getAldea() {
+        return aldea;
+    }
+
+    public String getBarrio() {
+        return barrio;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public String getBloque() {
+        return bloque;
+    }
+
+    public int getCodPost() {
+        return codPost;
     }
 
     public String getReferencia() {
         return referencia;
     }
 
-    public void setReferencia(String referencia) {
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
+    public void setAldea(String aldea) {
+        this.aldea = aldea;
+    }
+
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public void setBloque(String bloque) {
+        this.bloque = bloque;
+    }
+
+    public void setCodPost(int codPost) {
+        this.codPost = codPost;
+    }
+
+    public void setReferencia(String referencia) {  
         this.referencia = referencia;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Direccion dir = new Direccion("Tegucigalpa", "Colonia Kennedy", "Calle 123");
-
+        //Instance Direccion for each Persona
+        //Direccion dir = new Direccion(Depto, Municipio, Aldea, Barrio, Colonia, Calle, Bloque, CPost, Referencia);
+        Direccion dir = new Direccion("Comayagua", "Comayagua", "Lamani", "San Juan", "Olvidada", "Tierrosa", "Quinto", 33166, "Enfrente de carniceria el ToroLoco");
+        Direccion dir1 = new Direccion("Francisco Morazan", "Tegucigalpa", "Inventada", "San Pedro", "Olvidada", "Con baches", "Dos", 23100, "Enfrente de la taberna el bolo ciego");
+        Direccion dir2 = new Direccion("Francisco Morazan", "Tegucigalpa", "Creada", "San Lucas", "Nueva", "Con baches", "Dos", 11550, "Enfrente de donde Juanito el zapatero");
+    
+        //Instance Persona
         Persona denunciante = new Persona("Juan", "Perez", true, dir);
-        Persona denunciado = new Persona("Luis", "Lopez", false, dir);
-        Persona ofendido = new Persona("Maria", "Gomez", false, dir);
+        Persona denunciado = new Persona("Luis", "Lopez", true, dir1);
+        Persona ofendido = new Persona("Maria", "Gomez", false, dir2);
+        
+        denunciado.addDelitoCometido("Robo");
+        denunciado.addDelitoAsociado("Asalto");
 
-        Denunciado denunciadoObj = new Denunciado("Carlos", "Lopez", false, dir);
-        denunciadoObj.addDelitoCometido("Robo");
-        denunciadoObj.addDelitoAsociado("Asalto");
+        //ofendido.addDelitoCometido("Acoso");
+        ofendido.addDelitoAsociado("Robo");
 
-        Ofendido ofendidoObj = new Ofendido("Maria", "Gomez", false, dir);
-        ofendidoObj.addDelitoCometido("Acoso");
-        ofendidoObj.addDelitoAsociado("Amenazas");
-
-        Expediente expediente = new Expediente(denunciante.getfNm(), denunciadoObj.getfNm(), ofendidoObj.getfNm(), "Hechos violentos");
+        Expediente expediente = new Expediente(denunciante.getfNm(), denunciado.getfNm(), ofendido.getfNm(), "Hechos impactantesk, un tiroteo y un asalto, un herido por un carnicero");
         expediente.setFechaSucesos(15, 4, 2024);
 
         System.out.println("Expediente ID: " + expediente.getIdExp());
@@ -237,22 +255,22 @@ public class Main {
         System.out.println("Fecha de sucesos: " + expediente.getFechaSucesos());
 
         System.out.println("\nDelitos cometidos por denunciado:");
-        for (String delito : denunciadoObj.getDelitosCometidos()) {
+        for (String delito : denunciado.getDelitosCometidos()) {
             System.out.println("- " + delito);
         }
 
         System.out.println("\nDelitos asociados a denunciado:");
-        for (String delito : denunciadoObj.getDelitosAsociados()) {
+        for (String delito : denunciado.getDelitosAsociados()) {
             System.out.println("- " + delito);
         }
 
         System.out.println("\nDelitos cometidos por ofendido:");
-        for (String delito : ofendidoObj.getDelitosCometidos()) {
+        for (String delito : ofendido.getDelitosCometidos()) {
             System.out.println("- " + delito);
         }
 
         System.out.println("\nDelitos asociados a ofendido:");
-        for (String delito : ofendidoObj.getDelitosAsociados()) {
+        for (String delito : ofendido.getDelitosAsociados()) {
             System.out.println("- " + delito);
         }
     }
