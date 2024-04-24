@@ -233,17 +233,22 @@ public class Main {
         Direccion dir2 = new Direccion("Francisco Morazan", "Tegucigalpa", "Creada", "San Lucas", "Nueva", "Con baches", "Dos", 11550, "Enfrente de donde Juanito el zapatero");
     
         //Instance Persona
+        //Persona example = new Persona("firstName", "secondName", 0/Woman - 1/Man, dir)
         Persona denunciante = new Persona("Juan", "Perez", true, dir);
         Persona denunciado = new Persona("Luis", "Lopez", true, dir1);
         Persona ofendido = new Persona("Maria", "Gomez", false, dir2);
         
+        //addDelitoCometido and addDelitoAsociado
         denunciado.addDelitoCometido("Robo");
         denunciado.addDelitoAsociado("Asalto");
 
+        //addDelitoCometido and addDelitoAsociado
         //ofendido.addDelitoCometido("Acoso");
         ofendido.addDelitoAsociado("Robo");
-
-        Expediente expediente = new Expediente(denunciante.getfNm(), denunciado.getfNm(), ofendido.getfNm(), "Hechos impactantesk, un tiroteo y un asalto, un herido por un carnicero");
+    
+        //Instance of Expediente
+        //Expediente expediente = new Expediente(denunciante.getfNm(), denunciado.getfNm(), ofendido.getfNm(), descHechos) and fechaSucesos
+        Expediente expediente = new Expediente(denunciante.getfNm(), denunciado.getfNm(), ofendido.getfNm(), "Hechos impactante, un tiroteo y un asalto, un herido por un carnicero");
         expediente.setFechaSucesos(15, 4, 2024);
 
         System.out.println("Expediente ID: " + expediente.getIdExp());
