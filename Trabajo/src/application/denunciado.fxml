@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.denunciadoController">
+   <children>
+      <Label layoutX="328.0" layoutY="14.0" text="DENUNCIADO">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="52.0" text="* Campos Obligatorios">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="80.0" text="Datos">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="105.0" text="* Nombres:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombres" layoutX="70.0" layoutY="132.0" prefHeight="40.0" prefWidth="280.0" promptText="Ex.: Gerard Piqué">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="407.0" layoutY="105.0" text="* Apellidos:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtApellidos" layoutX="407.0" layoutY="132.0" prefHeight="40.0" prefWidth="280.0" promptText="Ex.: Bernabéu Pérez">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="70.0" layoutY="185.0" text="* Identidad:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtIdentidad" layoutX="70.0" layoutY="212.0" prefHeight="40.0" prefWidth="280.0" promptText="Ex.: 0311198706987">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="407.0" layoutY="185.0" text="* Edad:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEdad" layoutX="407.0" layoutY="212.0" prefHeight="40.0" prefWidth="100.0" promptText="Ex.: 37">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="568.0" layoutY="185.0" text="* Sexo:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="radMasculino" layoutX="568.0" layoutY="212.0" mnemonicParsing="false" text="Masculino">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="Sexo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radFemenino" layoutX="568.0" layoutY="239.0" mnemonicParsing="false" text="Femenino" toggleGroup="$Sexo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radOtro" layoutX="675.0" layoutY="212.0" mnemonicParsing="false" text="Otro" toggleGroup="$Sexo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="70.0" layoutY="274.0" text="Dirección">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="302.0" text="* Departamento:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDepartamento" layoutX="70.0" layoutY="329.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: Comayagua">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="299.0" layoutY="302.0" text="* Municipio:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMunicipio" layoutX="299.0" layoutY="329.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: Comayagua">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="529.0" layoutY="302.0" text="Aldea:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAldea" layoutX="529.0" layoutY="329.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: El Chiligatoro">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="70.0" layoutY="380.0" text="Barrio:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBarrio" layoutX="70.0" layoutY="407.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: Barrio El Centro">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="299.0" layoutY="380.0" text="Colonia:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtColonia" layoutX="299.0" layoutY="407.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: Colonia Santa Lucía">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="529.0" layoutY="380.0" text="Calle:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCalle" layoutX="529.0" layoutY="407.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: Calle Principal">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="70.0" layoutY="462.0" text="Bloque:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBloque" layoutX="70.0" layoutY="489.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: 15">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="299.0" layoutY="462.0" text="Código Postal:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCodigoPostal" layoutX="299.0" layoutY="489.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: 11201">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="529.0" layoutY="462.0" text="* Refrencia:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtReferencia" layoutX="529.0" layoutY="489.0" prefHeight="40.0" prefWidth="200.0" promptText="Ex.: Frente al parque central">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnAtras" layoutX="569.0" layoutY="560.0" mnemonicParsing="false" onAction="#paginaAnterior" prefHeight="30.0" prefWidth="90.0" text="Atrás">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSiguiente" layoutX="670.0" layoutY="560.0" mnemonicParsing="false" onAction="#paginaSiguiente" prefHeight="30.0" prefWidth="90.0" text="Siguiente">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Line endX="-84.79998779296875" endY="3.814697265625E-6" layoutX="148.0" layoutY="90.0" startX="-118.39999389648438" startY="3.814697265625E-6" />
+      <Line endX="-84.79998779296875" endY="3.814697265625E-6" layoutX="148.0" layoutY="283.0" startX="-118.39999389648438" startY="3.814697265625E-6" />
+      <Line endX="-128.89999389648438" endY="171.59999084472656" layoutX="158.0" layoutY="99.0" startX="-128.89999389648438" startY="-9.499996185302734" />
+      <Line endX="-128.89999389648438" endY="261.20001220703125" layoutX="158.0" layoutY="292.0" startX="-128.89999389648438" startY="-9.499996185302734" />
+      <Line endX="602.0" endY="-9.499984741210938" layoutX="158.0" layoutY="281.0" startX="-128.89999389648438" startY="-9.499996185302734" />
+      <Line endX="602.0" endY="-9.499984741210938" layoutX="158.0" layoutY="562.0" startX="-128.89999389648438" startY="-9.499996185302734" />
+      <Line endX="-128.89999389648438" endY="171.59999084472656" layoutX="889.0" layoutY="99.0" startX="-128.89999389648438" startY="-9.499996185302734" />
+      <Line endX="-128.89999389648438" endY="261.20001220703125" layoutX="889.0" layoutY="292.0" startX="-128.89999389648438" startY="-9.499996185302734" />
+      <Line endX="602.0" endY="-9.499984741210938" layoutX="159.0" layoutY="99.0" startX="-42.20001220703125" startY="-9.499980926513672" />
+      <Line endX="602.0" endY="-9.499984741210938" layoutX="157.0" layoutY="293.0" startX="-16.20001220703125" startY="-9.499984741210938" />
+   </children>
+</AnchorPane>
