@@ -6,10 +6,10 @@ import java.sql.SQLException;
 public class ExpedienteDML {
     private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USERNAME = "postgres";
-    private static final String PASSWORD = "!1Qazwsx";
+    private static final String PASSWORD = "";
 
     public void insertExpediente(Expediente expediente) {
-        String insertQuery = "INSERT INTO expedientes (id, denunciante, denunciado, ofendido, desHechos, fechaDenuncia, fechaSucesos) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO expediente (id, denunciante, denunciado, ofendido, desHechos, fechaDenuncia, fechaSucesos) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(insertQuery)) {
             statement.setInt(1, expediente.getIdExp());
@@ -27,7 +27,7 @@ public class ExpedienteDML {
     }
 
     public void updateExpediente(Expediente expediente) {
-        String updateQuery = "UPDATE expedientes SET denunciante = ?, denunciado = ?, ofendido = ?, desHechos = ?, fechaDenuncia = ?, fechaSucesos = ? WHERE id = ?";
+        String updateQuery = "UPDATE expediente SET denunciante = ?, denunciado = ?, ofendido = ?, desHechos = ?, fechaDenuncia = ?, fechaSucesos = ? WHERE id = ?";
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(updateQuery)) {
             statement.setString(1, expediente.getDenunciante());
@@ -45,7 +45,7 @@ public class ExpedienteDML {
     }
 
     public void deleteExpediente(int id) {
-        String deleteQuery = "DELETE FROM expedientes WHERE id = ?";
+        String deleteQuery = "DELETE FROM expediente WHERE id = ?";
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(deleteQuery)) {
             statement.setInt(1, id);
@@ -56,5 +56,4 @@ public class ExpedienteDML {
         }
     }
 
-    // You can add more methods for other DML operations like querying data
 }
