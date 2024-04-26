@@ -5,13 +5,13 @@ public class Persona {
 	// Atributos que representan los componentes de una persona.
 	String fNm;
 	String sNm;
-	int id;
+	long id;
 	int edad;
 	int sexo;
 	Direccion direccion;
 	
 	// Constructor para inicializar una persona.
-	public Persona(String fNm, String sNm, int id, int edad, int sexo, String departamento, String municipio, String aldea, String barrio, String colonia, String calle, String bloque, String codPostal, String referencia) {
+	public Persona(String fNm, String sNm, long id, int edad, int sexo, String departamento, String municipio, String aldea, String barrio, String colonia, String calle, String bloque, String codPostal, String referencia) {
 		this.fNm = fNm;
 		this.sNm = sNm;
 		this.id = id;
@@ -39,11 +39,11 @@ public class Persona {
     }
 
     // Método getter para obtener el número de identidad de la persona.
-    public int getId() {
+    public long getId() {
         return id;
     }
     // Método setter para asignar el número de identidad de la persona.
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -83,5 +83,4 @@ public class Persona {
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
-    
 }

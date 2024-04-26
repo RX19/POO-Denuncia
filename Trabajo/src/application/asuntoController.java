@@ -86,7 +86,7 @@ public class asuntoController {
 			
 			// Modificar atributo de Asunto y Fecha de asunto.
 			this.expediente.setAsuntos(this.asunto);
-			this.expediente.setFechaAsunto(this.fechaAsunto);
+			this.expediente.setFechaAsuntos(this.fechaAsunto);
 			System.out.printf("%s%n", this.expediente.getAsuntos());			
 			
 			// Abre la ventana siguiente: OFENDIDO.
@@ -116,15 +116,16 @@ public class asuntoController {
 	
 	public void init(Expediente expediente) {
 		this.expediente = expediente;
+		this.fechaAsunto = expediente.getFechaAsuntos();
 		
 		// Cuando carga ASUNTO desde el DENUNCIADO deja las casillas en blanco.
 		// Pero cuando carga ASUNTO desde OFENDIDO deja los valores escritos con anterioridad.
 		txaDescripcion.setText(this.expediente.getAsuntos());
 		
 		// Establecer una fecha específica (YY/MM/DD)
-        this.año = this.expediente.getFechaAsunto().getAño();
-        this.mes = this.expediente.getFechaAsunto().getMes();
-        this.dia = this.expediente.getFechaAsunto().getDia();
+        this.año = this.expediente.getFechaAsuntos().getAño();
+        this.mes = this.expediente.getFechaAsuntos().getMes();
+        this.dia = this.expediente.getFechaAsuntos().getDia();
         LocalDate fecha = LocalDate.of(this.año, this.mes, this.dia);
 		dateAsunto.setValue(fecha);
 	}

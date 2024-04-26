@@ -28,7 +28,7 @@ public class expedienteController {
 
 	// Variables globales.
 	Expediente expediente;
-	Fecha fechaDenuncia;
+	Fecha fechaExpediente;
 	int año, mes, dia;
 	
 	// Event Listener on DatePicker[#dateExpediente].onAction
@@ -38,7 +38,7 @@ public class expedienteController {
         this.año = localDate.getYear();
         this.mes = localDate.getMonthValue();
         this.dia = localDate.getDayOfMonth();
-        this.fechaDenuncia = new Fecha(this.dia, this.mes, this.año);
+        this.fechaExpediente = new Fecha(this.dia, this.mes, this.año);
 	}
 	
 	// Event Listener on Button[#btnAtras].onAction
@@ -73,9 +73,9 @@ public class expedienteController {
 		
 		// Modificar Atributo de Número de expediente y Fecha de Creacion.
 		this.expediente.setIdExpediente();
-		this.expediente.setFechaDenuncia(fechaDenuncia);
+		this.expediente.setFechaExpediente(this.fechaExpediente);
 		System.out.printf("No. de expediente: %s.%n", this.expediente.getIdExpediente());
-		System.out.printf("Fecha de Creación: %s.%n", this.expediente.getFechaDenuncia().getFechaCompleta());			
+		System.out.printf("Fecha de Creación: %s.%n", this.expediente.getFechaExpediente().getFechaCompleta());			
 		
 		// Abre la ventana siguiente: OFENDIDO.
 		try {
@@ -103,14 +103,15 @@ public class expedienteController {
 
 	public void init(Expediente expediente) {
 		this.expediente = expediente;
+		this.fechaExpediente = expediente.getFechaExpediente();
 		
 		// Cuando carga EXPEDIENTE desde el OFENDIDO deja las casillas en blanco.
 		txtIdExp.setText(String.valueOf(this.expediente.getIdExpediente()+1));
 		
 		// Establecer una fecha específica (YY/MM/DD)
-        this.año = this.expediente.getFechaDenuncia().getAño();
-        this.mes = this.expediente.getFechaDenuncia().getMes();
-        this.dia = this.expediente.getFechaDenuncia().getDia();
+        this.año = this.expediente.getFechaExpediente().getAño();
+        this.mes = this.expediente.getFechaExpediente().getMes();
+        this.dia = this.expediente.getFechaExpediente().getDia();
         LocalDate fecha = LocalDate.of(this.año, this.mes, this.dia);
         dateExpediente.setValue(fecha);
 	}

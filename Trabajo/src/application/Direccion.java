@@ -44,7 +44,6 @@ public class Direccion {
         this.municipio = municipio;
     }
  
-
     // Método getter para obtener la aldea de la dirección.
     public String getAldea() {
         return aldea;
@@ -132,7 +131,6 @@ public class Direccion {
     	}
     	
     	direccion += referencia; 
-    	
     	return direccion;
     }
 

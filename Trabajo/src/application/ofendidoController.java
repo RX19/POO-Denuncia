@@ -55,7 +55,10 @@ public class ofendidoController {
 	// Variables globales.
 	Expediente expediente;
 	String fNm, sNm, idtext, edadtext, departamento, municipio, aldea, barrio, colonia, calle, bloque, codPostal, referencia;
-	int id, edad, sexo;
+	int edad, sexo;
+	long id;
+	boolean seguirId = true;
+	boolean seguirEdad = true;
 	
 	// Event Listener on Button[#btnAtras].onAction
 	@FXML
@@ -114,18 +117,33 @@ public class ofendidoController {
 		}
 		
 		//Verifica si los campos obligatorios no estan vacios.
-		if (fNm.isEmpty() || sNm.isEmpty() || idtext.isEmpty() || edadtext.isEmpty() || sexo == 0 || departamento.isEmpty() || municipio.isEmpty() || referencia.isEmpty()) {
+		if (sexo == 0 || departamento.isEmpty() || municipio.isEmpty() || referencia.isEmpty()) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setHeaderText(null);
 			alert.setTitle("ERROR");
 			alert.setContentText("Debe llenar los campos obligatorios (*).");
 			alert.showAndWait();
 		} else {
-			//Verificar si los campos id y edad solo contienen numeros.
-			if (idtext.matches("\\d+") && edadtext.matches("\\d+")) {
-				id = Integer.parseInt(idtext);
+			//Verifica si el campo id esta vacio y si solo contiene numeros.
+			if (idtext.isEmpty()) {
+				id = 0;
+			} else if (idtext.matches("\\d+")) {
+				id = Long.parseLong(idtext);
+			} else {
+				this.seguirId = false;
+			}
+			
+			//Verifica si el campo edad esta vacio y si solo contiene numeros.
+			if (edadtext.isEmpty()) {
+				edad = 0;
+			} else if (edadtext.matches("\\d+")) {
 				edad = Integer.parseInt(edadtext);
-				
+			} else {
+				this.seguirEdad = false;
+			}
+			
+			//Verificar si los campos id y edad estan llens y solo contienen numeros.
+			if (this.seguirId && this.seguirEdad) {
 				// Modificar instancia de Ofendido.
 				this.expediente.getOfendido().setfNm(fNm);
 				this.expediente.getOfendido().setsNm(sNm);
@@ -176,6 +194,10 @@ public class ofendidoController {
 				alert.setTitle("ERROR");
 				alert.setContentText("Tipo de datos incorrecto. Identidad y Edad deben ser números.");
 				alert.showAndWait();
+				this.txtIdentidad.setText("");
+				this.txtEdad.setText("");
+				this.seguirId = true;
+				this.seguirEdad = true;
 			}
 		}
 	}

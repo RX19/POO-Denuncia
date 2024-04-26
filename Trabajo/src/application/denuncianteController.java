@@ -53,7 +53,8 @@ public class denuncianteController {
 	// Variables globales.
 	Expediente expediente;
 	String fNm, sNm, idtext, edadtext, departamento, municipio, aldea, barrio, colonia, calle, bloque, codPostal, referencia;
-	int id, edad, sexo;
+	int edad, sexo;
+	long id;
 	
 	// Event Listener on Button[#btnAtras].onAction
 	@FXML
@@ -118,7 +119,7 @@ public class denuncianteController {
 		} else {
 			//Verificar si los campos id y edad solo contienen numeros.
 			if (idtext.matches("\\d+") && edadtext.matches("\\d+")) {
-				id = Integer.parseInt(idtext);
+				id = Long.parseLong(idtext);
 				edad = Integer.parseInt(edadtext);
 				
 				// Modificar instancia de denunciante.

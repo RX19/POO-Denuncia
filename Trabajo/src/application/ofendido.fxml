@@ -26,7 +26,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="105.0" text="* Nombres:">
+      <Label layoutX="70.0" layoutY="105.0" text="Nombres:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="407.0" layoutY="105.0" text="* Apellidos:">
+      <Label layoutX="407.0" layoutY="105.0" text="Apellidos:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -46,7 +46,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="70.0" layoutY="185.0" text="* Identidad:">
+      <Label layoutX="70.0" layoutY="185.0" text="Identidad:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -56,7 +56,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="407.0" layoutY="185.0" text="* Edad:">
+      <Label layoutX="407.0" layoutY="185.0" text="Edad:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

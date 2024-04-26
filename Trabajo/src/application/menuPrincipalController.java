@@ -17,14 +17,14 @@ public class menuPrincipalController {
 	private Button btnNuevoExpediente;
 
 	// Variables globales.
-	int idExpediente = 0;  
+	int idExpediente;  
+	Fecha fechaExpediente;
 	Expediente expediente;
 	Denunciante denunciante;
 	Denunciado denunciado;
 	Ofendido ofendido;
 	String asuntos = "";
-	Fecha fechaAsunto;
-	Fecha fechaDenuncia;
+	Fecha fechaAsuntos;
 	
 	// Event Listener on Button[#btnNuevoExpediente].onAction
 	@FXML
@@ -40,11 +40,11 @@ public class menuPrincipalController {
 			stageDenunciante.setScene(scene);
 			denuncianteController denuncianteController = loader.getController();
 			
-			//Instanciar una fecha Asunto.
-			this.fechaDenuncia = new Fecha(LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());
+			//Instanciar una fecha de Expediente.
+			this.fechaExpediente = new Fecha(LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());
 			
-			//Instanciar una fecha Asunto.
-			this.fechaAsunto = new Fecha(LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());			
+			//Instanciar una fecha de Asunto.
+			this.fechaAsuntos = new Fecha(LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());			
 			
 			//Instancia de un Ofendido en blanco.
 			this.ofendido = new Ofendido("", "", 0, 0, 0, "", "", "", "", "", "", "", "", "");
@@ -56,7 +56,7 @@ public class menuPrincipalController {
 			this.denunciante = new Denunciante("", "", 0, 0, 0, "", "", "", "", "", "", "", "", "");
 			
 			//Instancia de un Expediente en blanco.
-			this.expediente = new Expediente(this.idExpediente, this.denunciante, this.denunciado, this.ofendido, this.asuntos, this.fechaDenuncia, this.fechaAsunto);			
+			this.expediente = new Expediente(this.idExpediente, this.fechaExpediente, this.denunciante, this.denunciado, this.ofendido, this.asuntos, this.fechaAsuntos);			
 			
 			System.out.printf("--Nuevo Denunciante:%n");
 			denuncianteController.init(this.expediente); // Enviar expediente a la ventana DENUNCIANTE.
@@ -68,5 +68,11 @@ public class menuPrincipalController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void init(Expediente expediente) {
+		// Obtener valor del id del anterior expediente.
+		this.idExpediente = expediente.getIdExpediente();
+		
 	}
 }

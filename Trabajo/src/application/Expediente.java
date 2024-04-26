@@ -2,24 +2,24 @@ package application;
 
 public class Expediente {
 
-	// Atributos que representan los componentes de una persona denunciante.
+	// Atributos que representan los componentes de un Expedinete.
 	int idExpediente;
+	Fecha fechaExpediente;
 	Denunciante denunciante;
 	Denunciado denunciado;
 	Ofendido ofendido;
 	String asuntos;
-	Fecha fechaDenuncia;
-	Fecha fechaAsunto;
+	Fecha fechaAsuntos;
 	
-	// Constructor para inicializar una persona denunciante.
-	public Expediente(int idExpediente, Denunciante denunciante, Denunciado denunciado, Ofendido ofendido, String asuntos, Fecha fechaAsunto, Fecha fechaDenuncia) {
+	// Constructor para inicializar un Expedinete.
+	public Expediente(int idExpediente, Fecha fechaExpediente, Denunciante denunciante, Denunciado denunciado, Ofendido ofendido, String asuntos, Fecha fechaAsuntos) {
 		this.idExpediente = idExpediente;
+		this.fechaExpediente = fechaExpediente;
         this.denunciante = denunciante;
         this.denunciado = denunciado;
         this.ofendido = ofendido;
         this.asuntos = asuntos;
-        this.fechaAsunto = fechaAsunto;
-        this.fechaDenuncia = fechaDenuncia;
+        this.fechaAsuntos = fechaAsuntos;
 	}
 	
 	// Método getter para obtener el id del expediente.
@@ -30,6 +30,15 @@ public class Expediente {
     public void setIdExpediente() {
     	//Sirve para simular el autonumerado.
     	this.idExpediente += 1;
+    }
+    
+    // Método getter para obtener la fecha de la creacion del expediente.
+    public Fecha getFechaExpediente() {
+        return fechaExpediente;
+    }
+    // Método setter para asignar la fecha de la creacion del expediente.
+    public void setFechaExpediente(Fecha fechaExpediente) {
+        this.fechaExpediente = fechaExpediente;
     }
 
     // Método getter para obtener el Denunciante del expediente.
@@ -69,20 +78,11 @@ public class Expediente {
     }
 
     // Método getter para obtener la fecha de los asuntos en el expediente.
-    public Fecha getFechaAsunto() {
-        return fechaAsunto;
+    public Fecha getFechaAsuntos() {
+        return fechaAsuntos;
     }
     // Método setter para asignar la fecha de los asuntos en el expediente.
-    public void setFechaAsunto(Fecha fechaAsunto) {
-        this.fechaAsunto = fechaAsunto;
-    }
-
-    // Método getter para obtener la fecha de la creacion del expediente.
-    public Fecha getFechaDenuncia() {
-        return fechaDenuncia;
-    }
-    // Método setter para asignar la fecha de la creacion del expediente.
-    public void setFechaDenuncia(Fecha fechaDenuncia) {
-        this.fechaDenuncia = fechaDenuncia;
+    public void setFechaAsuntos(Fecha fechaAsuntos) {
+        this.fechaAsuntos = fechaAsuntos;
     }
 }
